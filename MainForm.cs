@@ -70,7 +70,7 @@ namespace ResxEditor
             //hide non-text fields
             foreach (DictionaryEntry d in resourceSet)
             {
-                if (d.Value.GetType() != (new string('a', 1).GetType()))
+                if (d.Value == null || d.Value.GetType() != typeof(string))
                 {
                     foreach (DataGridViewRow row in xmlGridView.Rows)
                     {
