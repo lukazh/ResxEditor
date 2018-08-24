@@ -142,6 +142,15 @@ namespace ResxEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide Comment.
+        /// </summary>
+        internal static string HideCommentCommand {
+            get {
+                return ResourceManager.GetString("HideCommentCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Increase.
         /// </summary>
         internal static string IncreaseTextSizeCommand {
@@ -192,6 +201,15 @@ namespace ResxEditor.Properties {
         internal static string SaveCommand {
             get {
                 return ResourceManager.GetString("SaveCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Comment.
+        /// </summary>
+        internal static string ShowCommentCommand {
+            get {
+                return ResourceManager.GetString("ShowCommentCommand", resourceCulture);
             }
         }
         

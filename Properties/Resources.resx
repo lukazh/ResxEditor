@@ -150,6 +150,9 @@
     <value>Help</value>
     <comment>Should be like *Help* in Microsoft Word.</comment>
   </data>
+  <data name="HideCommentCommand" xml:space="preserve">
+    <value>Hide Comment</value>
+  </data>
   <data name="IncreaseTextSizeCommand" xml:space="preserve">
     <value>Increase</value>
     <comment>Like: *Increase* text size.</comment>
@@ -172,6 +175,9 @@
   <data name="SaveCommand" xml:space="preserve">
     <value>Save</value>
     <comment>Should be like *Save* in MS Word.</comment>
+  </data>
+  <data name="ShowCommentCommand" xml:space="preserve">
+    <value>Show Comment</value>
   </data>
   <data name="TextSizeCommand" xml:space="preserve">
     <value>Text Size</value>

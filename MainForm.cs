@@ -19,6 +19,7 @@ namespace ResxEditor
 
         bool isDocumentOpen = false;
         bool isDataModified = false;
+        bool showComment = true;
 
         float defaultTextSize;
 
@@ -108,7 +109,7 @@ namespace ResxEditor
             xmlGridView.Columns["value"].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             //show and set up the Comment column
-            xmlGridView.Columns["comment"].Visible = true;
+            xmlGridView.Columns["comment"].Visible = showComment;
             xmlGridView.Columns["comment"].ReadOnly = true;
             xmlGridView.Columns["comment"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             xmlGridView.Columns["comment"].HeaderText = Resources.CommentHeader;
@@ -142,6 +143,7 @@ namespace ResxEditor
             }
 
             textSizeMenuItem.Enabled = isDocumentOpen;
+            toggleCommentMenuItem.Enabled = isDocumentOpen;
             saveMenuItem.Enabled = isDocumentOpen;
             saveAsMenuItem.Enabled = isDocumentOpen;
         }
@@ -277,8 +279,23 @@ namespace ResxEditor
         {
             xmlGridView.Font = new Font(xmlGridView.Font.FontFamily, defaultTextSize);
             xmlGridView.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
-        } 
+        }
 
         #endregion
+
+        private void toggleCommentMenuItem_Click(object sender, EventArgs e)
+        {
+            if (showComment)
+            {
+                toggleCommentMenuItem.Text = Resources.ShowCommentCommand;
+                showComment = false;
+            }
+            else
+            {
+                toggleCommentMenuItem.Text = Resources.HideCommentCommand;
+                showComment = true;
+            }
+            xmlGridView.Columns["comment"].Visible = showComment;
+        }
     }
 }
