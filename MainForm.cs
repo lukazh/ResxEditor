@@ -28,7 +28,7 @@ namespace ResxEditor
         public MainForm(string[] args)
         {
             InitializeComponent();
-            
+
             xmlGridView.CurrentCellDirtyStateChanged += new EventHandler(xmlGridView_CurrentCellDirtyStateChanged);
             Text = Resources.Title;
             if (args.Length > 0)
@@ -146,6 +146,7 @@ namespace ResxEditor
             toggleCommentMenuItem.Enabled = isDocumentOpen;
             saveMenuItem.Enabled = isDocumentOpen;
             saveAsMenuItem.Enabled = isDocumentOpen;
+            xmlGridView.Sort(xmlGridView.Columns["name"], ListSortDirection.Ascending);
         }
 
         private void ReportError(string message)
